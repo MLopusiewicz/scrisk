@@ -8,3 +8,4 @@
 .\objects\main.o: C:\Program Files (x86)\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include\system_stm32f10x.h
 .\objects\main.o: COMControll.h
 .\objects\main.o: BaseFunctions.h
+.\objects\main.o: enkoderControll.h

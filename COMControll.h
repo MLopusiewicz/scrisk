@@ -5,7 +5,7 @@
 
 void USARTInit(void);
 void Autenthicate(void);
-
+void SendByte(uint8_t a);
 
 
 #endif /* _COMControl_H */

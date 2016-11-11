@@ -45,3 +45,9 @@ void Autenthicate(void)
 					while((USART1->SR & USART_SR_TC) != USART_SR_TC){}
 			}
 }
+void SendByte(uint8_t a)
+{
+	while((USART1 -> SR & USART_SR_TXE) != USART_SR_TXE ){}
+	USART1->DR = a;		
+	while((USART1->SR & USART_SR_TC) != USART_SR_TC){}
+}
