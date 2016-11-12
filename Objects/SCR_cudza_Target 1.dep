@@ -1,5 +1,5 @@
 Dependencies for Project 'SCR_cudza', Target 'Target 1': (DO NOT MODIFY !)
-F (.\main.c)(0x582650A4)(-c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork --split_sections --c99-IM:\uC\SCR_cudza\RTE-IM:\uC\SCR_cudza\RTE\Device\STM32F100RB-I"C:\Program Files (x86)\Keil\ARM\PACK\ARM\CMSIS\5.0.0-Beta12\CMSIS\Include"-I"C:\Program Files (x86)\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include"-D__UVISION_VERSION="521" -D_RTE_ -DSTM32F10X_MD_VL-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
+F (.\main.c)(0x58270777)(-c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork --split_sections --c99-IM:\uC\SCR_cudza\RTE-IM:\uC\SCR_cudza\RTE\Device\STM32F100RB-I"C:\Program Files (x86)\Keil\ARM\PACK\ARM\CMSIS\5.0.0-Beta12\CMSIS\Include"-I"C:\Program Files (x86)\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include"-D__UVISION_VERSION="521" -D_RTE_ -DSTM32F10X_MD_VL-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
 I (C:\Program Files (x86)\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include\stm32f10x.h)(0x53BA6FD0)
 I (M:\uC\SCR_cudza\RTE\RTE_Components.h)(0x5822FC12)
 I (C:\Program Files (x86)\Keil\ARM\PACK\ARM\CMSIS\5.0.0-Beta12\CMSIS\Include\core_cm3.h)(0x57D81F4A)
@@ -9,8 +9,8 @@ I (C:\Program Files (x86)\Keil\ARM\PACK\ARM\CMSIS\5.0.0-Beta12\CMSIS\Include\cms
 I (C:\Program Files (x86)\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include\system_stm32f10x.h)(0x4F1E90AC)
 I (COMControll.h)(0x582629EB)
 I (BaseFunctions.h)(0x58260C15)
-I (enkoderControll.h)(0x58264D36)
-F (.\BaseFunctions.c)(0x58262162)(-c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork --split_sections --c99-IM:\uC\SCR_cudza\RTE-IM:\uC\SCR_cudza\RTE\Device\STM32F100RB-I"C:\Program Files (x86)\Keil\ARM\PACK\ARM\CMSIS\5.0.0-Beta12\CMSIS\Include"-I"C:\Program Files (x86)\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include"-D__UVISION_VERSION="521" -D_RTE_ -DSTM32F10X_MD_VL-o .\objects\basefunctions.o --omf_browse .\objects\basefunctions.crf --depend .\objects\basefunctions.d)
+I (enkoderControll.h)(0x58270788)
+F (.\BaseFunctions.c)(0x5826F0D4)(-c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork --split_sections --c99-IM:\uC\SCR_cudza\RTE-IM:\uC\SCR_cudza\RTE\Device\STM32F100RB-I"C:\Program Files (x86)\Keil\ARM\PACK\ARM\CMSIS\5.0.0-Beta12\CMSIS\Include"-I"C:\Program Files (x86)\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include"-D__UVISION_VERSION="521" -D_RTE_ -DSTM32F10X_MD_VL-o .\objects\basefunctions.o --omf_browse .\objects\basefunctions.crf --depend .\objects\basefunctions.d)
 I (C:\Program Files (x86)\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include\stm32f10x.h)(0x53BA6FD0)
 I (M:\uC\SCR_cudza\RTE\RTE_Components.h)(0x5822FC12)
 I (C:\Program Files (x86)\Keil\ARM\PACK\ARM\CMSIS\5.0.0-Beta12\CMSIS\Include\core_cm3.h)(0x57D81F4A)
@@ -29,8 +29,8 @@ I (C:\Program Files (x86)\Keil\ARM\ARMCC\include\stdint.h)(0x574EA096)
 I (C:\Program Files (x86)\Keil\ARM\PACK\ARM\CMSIS\5.0.0-Beta12\CMSIS\Include\cmsis_compiler.h)(0x57D81F4A)
 I (C:\Program Files (x86)\Keil\ARM\PACK\ARM\CMSIS\5.0.0-Beta12\CMSIS\Include\cmsis_armcc.h)(0x57EB70DC)
 I (C:\Program Files (x86)\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include\system_stm32f10x.h)(0x4F1E90AC)
-F (.\enkoderControll.c)(0x58264DBF)(-c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork --split_sections --c99-IM:\uC\SCR_cudza\RTE-IM:\uC\SCR_cudza\RTE\Device\STM32F100RB-I"C:\Program Files (x86)\Keil\ARM\PACK\ARM\CMSIS\5.0.0-Beta12\CMSIS\Include"-I"C:\Program Files (x86)\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include"-D__UVISION_VERSION="521" -D_RTE_ -DSTM32F10X_MD_VL-o .\objects\enkodercontroll.o --omf_browse .\objects\enkodercontroll.crf --depend .\objects\enkodercontroll.d)
-I (enkoderControll.h)(0x58264D36)
+F (.\enkoderControll.c)(0x5827078D)(-c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork --split_sections --c99-IM:\uC\SCR_cudza\RTE-IM:\uC\SCR_cudza\RTE\Device\STM32F100RB-I"C:\Program Files (x86)\Keil\ARM\PACK\ARM\CMSIS\5.0.0-Beta12\CMSIS\Include"-I"C:\Program Files (x86)\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include"-D__UVISION_VERSION="521" -D_RTE_ -DSTM32F10X_MD_VL-o .\objects\enkodercontroll.o --omf_browse .\objects\enkodercontroll.crf --depend .\objects\enkodercontroll.d)
+I (enkoderControll.h)(0x58270788)
 I (C:\Program Files (x86)\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include\stm32f10x.h)(0x53BA6FD0)
 I (M:\uC\SCR_cudza\RTE\RTE_Components.h)(0x5822FC12)
 I (C:\Program Files (x86)\Keil\ARM\PACK\ARM\CMSIS\5.0.0-Beta12\CMSIS\Include\core_cm3.h)(0x57D81F4A)
