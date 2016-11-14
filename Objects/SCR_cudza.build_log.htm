@@ -28,12 +28,17 @@ Project File Date:  11/12/2016
 *** Using Compiler 'V5.06 update 3 (build 300)', folder: 'C:\Program Files (x86)\Keil\ARM\ARMCC\Bin'
 Build target 'Target 1'
 compiling enkoderControll.c...
-enkoderControll.c(42): warning:  #1-D: last line of file ends without a newline
-  }
-enkoderControll.c: 1 warning, 0 errors
+compiling main.c...
+main.c(18): warning:  #167-D: argument of type "volatile struct ENCODER *" is incompatible with parameter of type "struct ENCODER *"
+  	ResetEncoder(&force);
+main.c(19): warning:  #167-D: argument of type "volatile struct ENCODER *" is incompatible with parameter of type "struct ENCODER *"
+  	ResetEncoder(&translation);
+main.c(27): warning:  #111-D: statement is unreachable
+  	return 0;
+main.c: 3 warnings, 0 errors
 linking...
-Program Size: Code=1628 RO-data=304 RW-data=0 ZI-data=1632  
-".\Objects\SCR_cudza.axf" - 0 Error(s), 1 Warning(s).
+Program Size: Code=3196 RO-data=320 RW-data=20 ZI-data=1636  
+".\Objects\SCR_cudza.axf" - 0 Error(s), 3 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -64,7 +69,7 @@ Package Vendor: Keil
       Source file:   Device\Source\ARM\startup_stm32f10x_md_vl.s
       Include file:  RTE_Driver\Config\RTE_Device.h
       Source file:   Device\Source\system_stm32f10x.c
-Build Time Elapsed:  00:00:00
+Build Time Elapsed:  00:00:01
 </pre>
 </body>
 </html>

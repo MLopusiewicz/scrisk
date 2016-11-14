@@ -1,8 +1,11 @@
 #include "enkoderControll.h"
 
-struct ENCODER force;
-struct ENCODER translation;
 
+void ResetEncoder(struct ENCODER* a)
+{
+	a->firstTick = true;
+	a->ticks = 0;
+}
 void SetUpInterrupt(void)
 {
 	RCC->APB2ENR |= RCC_APB2ENR_IOPAEN;
@@ -15,30 +18,21 @@ void SetUpInterrupt(void)
 	RCC->APB2ENR |= RCC_APB2ENR_IOPCEN;
 	
 	EXTI->IMR = 0x001E;
-	EXTI->RTSR = 0x01E;
-	//EXTI->FTSR = 0x001F;
+	EXTI->RTSR = 0x001E;
+	EXTI->FTSR &= ~0x001E;
+	
+	
 	
 	NVIC_EnableIRQ(EXTI1_IRQn);
 	NVIC_EnableIRQ(EXTI2_IRQn);
 	NVIC_EnableIRQ(EXTI3_IRQn);
 	NVIC_EnableIRQ(EXTI4_IRQn);
-}
-
-
-
-void EXTI1_IRQHandler() //PA1 linia - A 
-{
-		
-}
-void EXTI2_IRQHandler() //PA2 linia - B
-{
 	
+	NVIC_SetPriority(EXTI1_IRQn, 1);
+	NVIC_SetPriority(EXTI2_IRQn, 1);
+	NVIC_SetPriority(EXTI3_IRQn, 1);
+	NVIC_SetPriority(EXTI4_IRQn, 1);
 }
-void EXTI3_IRQHandler()
-{
-	GPIOC->BSRR |= GPIO_BSRR_BS9;
-}
-void EXTI4_IRQHandler()
-{
-	GPIOC->BSRR |= GPIO_BSRR_BR9;
-}
+
+
+

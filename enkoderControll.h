@@ -15,6 +15,10 @@ struct ENCODER
 
 void SetUpInterrupt(void);
 
+void ResetEncoder(struct ENCODER* a);
+
+
+
 
 
 

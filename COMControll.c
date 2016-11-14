@@ -1,6 +1,10 @@
 #include "COMControll.h"
+#include "enkoderControll.h"
+
 #define validationRequest 125
 #define deviceID 160
+#define ForceTickValueRequest 167
+
 void USARTInit(void)
 {
 	RCC->APB2ENR |= RCC_APB2ENR_USART1EN | RCC_APB2ENR_AFIOEN ;
@@ -17,10 +21,11 @@ void USARTInit(void)
 	double div = (double)12000000/(16*9600);
 	
 	uint32_t mantissa = (int)div;
+	double fraction = div - mantissa;
+	int frac = (int)(fraction*1000) & 0x0F;
 	
-  mantissa = mantissa<< 4;
-  USART1->BRR = mantissa;
-	
+  mantissa = mantissa<<4;
+  USART1->BRR = mantissa | frac;
 
 	USART1->CR1  &= ~USART_CR1_M;	// 8 bitow 
 	USART1->CR2 &= ~(USART_CR2_STOP); //1 stopbit
@@ -28,22 +33,16 @@ void USARTInit(void)
 	USART1->CR1 |= USART_CR1_RXNEIE;
 	USART1->CR1 |= USART_CR1_UE;
 	
-}
-void USART1_IRQHandler (void) {
-	if((USART1->SR & USART_SR_RXNE) == USART_SR_RXNE){
-		Autenthicate();
-	}
 	
-				GPIOC->BSRR |= GPIO_BSRR_BS9;
+	
+	NVIC_EnableIRQ(USART1_IRQn);
 }
+
 void Autenthicate(void)
 {
-	if(USART1->DR == 125)
-				{
-					while((USART1 -> SR & USART_SR_TXE) != USART_SR_TXE ){}
-					USART1->DR = deviceID;		
-					while((USART1->SR & USART_SR_TC) != USART_SR_TC){}
-			}
+	while((USART1 -> SR & USART_SR_TXE) != USART_SR_TXE ){}
+	USART1->DR = deviceID;		
+	while((USART1->SR & USART_SR_TC) != USART_SR_TC){}
 }
 void SendByte(uint8_t a)
 {
@@ -51,3 +50,12 @@ void SendByte(uint8_t a)
 	USART1->DR = a;		
 	while((USART1->SR & USART_SR_TC) != USART_SR_TC){}
 }
+void SendInt(int a)
+{
+	for(int i=0; i<4;i++)
+	{
+		SendByte((uint8_t) a);
+		a=a>>8;
+	}
+}
+
