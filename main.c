@@ -71,6 +71,7 @@ void EXTI4_IRQHandler()
 }
 
 
+
 void USART1_IRQHandler (void) {
 	if((USART1->SR & USART_SR_RXNE) == USART_SR_RXNE){
 		
@@ -80,7 +81,7 @@ void USART1_IRQHandler (void) {
 						SendByte(deviceID); 
 						break;
 			case forceTickValueRequest:
-						SendInt(force.ticks, 4);
+						SendInt(force.ticks, 2);
 						force.ticks = 0;
 						break;
 			case resetEncoders:
