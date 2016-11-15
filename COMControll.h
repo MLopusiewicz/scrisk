@@ -3,9 +3,9 @@
 
 #define validationRequest 125
 #define deviceID 160
-#define forceTickValueRequest 167
 #define resetEncoders 212
-
+#define ticksRequest 230
+#define misstakeRequest 45
 #include <stm32f10x.h>
 
 

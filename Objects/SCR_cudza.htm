@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\Objects\SCR_cudza.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Objects\SCR_cudza.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060300: Last Updated: Tue Nov 15 10:54:19 2016
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060300: Last Updated: Tue Nov 15 23:24:09 2016
 <BR><P>
 <H3>Maximum Stack Usage =         72 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -46,11 +46,11 @@ Function Pointers
  <LI><a href="#[a]">DebugMon_Handler</a> from startup_stm32f10x_md_vl.o(.text) referenced from startup_stm32f10x_md_vl.o(RESET)
  <LI><a href="#[13]">EXTI0_IRQHandler</a> from startup_stm32f10x_md_vl.o(.text) referenced from startup_stm32f10x_md_vl.o(RESET)
  <LI><a href="#[31]">EXTI15_10_IRQHandler</a> from startup_stm32f10x_md_vl.o(.text) referenced from startup_stm32f10x_md_vl.o(RESET)
- <LI><a href="#[14]">EXTI1_IRQHandler</a> from main.o(i.EXTI1_IRQHandler) referenced from startup_stm32f10x_md_vl.o(RESET)
- <LI><a href="#[15]">EXTI2_IRQHandler</a> from main.o(i.EXTI2_IRQHandler) referenced from startup_stm32f10x_md_vl.o(RESET)
- <LI><a href="#[16]">EXTI3_IRQHandler</a> from main.o(i.EXTI3_IRQHandler) referenced from startup_stm32f10x_md_vl.o(RESET)
+ <LI><a href="#[14]">EXTI1_IRQHandler</a> from startup_stm32f10x_md_vl.o(.text) referenced from startup_stm32f10x_md_vl.o(RESET)
+ <LI><a href="#[15]">EXTI2_IRQHandler</a> from startup_stm32f10x_md_vl.o(.text) referenced from startup_stm32f10x_md_vl.o(RESET)
+ <LI><a href="#[16]">EXTI3_IRQHandler</a> from startup_stm32f10x_md_vl.o(.text) referenced from startup_stm32f10x_md_vl.o(RESET)
  <LI><a href="#[17]">EXTI4_IRQHandler</a> from main.o(i.EXTI4_IRQHandler) referenced from startup_stm32f10x_md_vl.o(RESET)
- <LI><a href="#[20]">EXTI9_5_IRQHandler</a> from startup_stm32f10x_md_vl.o(.text) referenced from startup_stm32f10x_md_vl.o(RESET)
+ <LI><a href="#[20]">EXTI9_5_IRQHandler</a> from main.o(i.EXTI9_5_IRQHandler) referenced from startup_stm32f10x_md_vl.o(RESET)
  <LI><a href="#[11]">FLASH_IRQHandler</a> from startup_stm32f10x_md_vl.o(.text) referenced from startup_stm32f10x_md_vl.o(RESET)
  <LI><a href="#[5]">HardFault_Handler</a> from startup_stm32f10x_md_vl.o(.text) referenced from startup_stm32f10x_md_vl.o(RESET)
  <LI><a href="#[29]">I2C1_ER_IRQHandler</a> from startup_stm32f10x_md_vl.o(.text) referenced from startup_stm32f10x_md_vl.o(RESET)
@@ -326,7 +326,13 @@ Global Symbols
 <P><STRONG><a name="[31]"></a>EXTI15_10_IRQHandler</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, startup_stm32f10x_md_vl.o(.text))
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f10x_md_vl.o(RESET)
 </UL>
-<P><STRONG><a name="[20]"></a>EXTI9_5_IRQHandler</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, startup_stm32f10x_md_vl.o(.text))
+<P><STRONG><a name="[14]"></a>EXTI1_IRQHandler</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, startup_stm32f10x_md_vl.o(.text))
+<BR>[Address Reference Count : 1]<UL><LI> startup_stm32f10x_md_vl.o(RESET)
+</UL>
+<P><STRONG><a name="[15]"></a>EXTI2_IRQHandler</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, startup_stm32f10x_md_vl.o(.text))
+<BR>[Address Reference Count : 1]<UL><LI> startup_stm32f10x_md_vl.o(RESET)
+</UL>
+<P><STRONG><a name="[16]"></a>EXTI3_IRQHandler</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, startup_stm32f10x_md_vl.o(.text))
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f10x_md_vl.o(RESET)
 </UL>
 <P><STRONG><a name="[11]"></a>FLASH_IRQHandler</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, startup_stm32f10x_md_vl.o(.text))
@@ -452,23 +458,17 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[44]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[14]"></a>EXTI1_IRQHandler</STRONG> (Thumb, 48 bytes, Stack size 0 bytes, main.o(i.EXTI1_IRQHandler))
+<P><STRONG><a name="[17]"></a>EXTI4_IRQHandler</STRONG> (Thumb, 134 bytes, Stack size 0 bytes, main.o(i.EXTI4_IRQHandler))
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f10x_md_vl.o(RESET)
 </UL>
-<P><STRONG><a name="[15]"></a>EXTI2_IRQHandler</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, main.o(i.EXTI2_IRQHandler))
-<BR>[Address Reference Count : 1]<UL><LI> startup_stm32f10x_md_vl.o(RESET)
-</UL>
-<P><STRONG><a name="[16]"></a>EXTI3_IRQHandler</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, main.o(i.EXTI3_IRQHandler))
-<BR>[Address Reference Count : 1]<UL><LI> startup_stm32f10x_md_vl.o(RESET)
-</UL>
-<P><STRONG><a name="[17]"></a>EXTI4_IRQHandler</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, main.o(i.EXTI4_IRQHandler))
+<P><STRONG><a name="[20]"></a>EXTI9_5_IRQHandler</STRONG> (Thumb, 138 bytes, Stack size 0 bytes, main.o(i.EXTI9_5_IRQHandler))
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f10x_md_vl.o(RESET)
 </UL>
 <P><STRONG><a name="[5a]"></a>LedInit</STRONG> (Thumb, 36 bytes, Stack size 0 bytes, basefunctions.o(i.LedInit))
 <BR><BR>[Called By]<UL><LI><a href="#[44]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[5b]"></a>ResetEncoder</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, enkodercontroll.o(i.ResetEncoder))
+<P><STRONG><a name="[5b]"></a>ResetEncoder</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, enkodercontroll.o(i.ResetEncoder))
 <BR><BR>[Called By]<UL><LI><a href="#[44]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
@@ -485,7 +485,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[2e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART1_IRQHandler
 </UL>
 
-<P><STRONG><a name="[50]"></a>SetUpInterrupt</STRONG> (Thumb, 154 bytes, Stack size 8 bytes, enkodercontroll.o(i.SetUpInterrupt))
+<P><STRONG><a name="[50]"></a>SetUpInterrupt</STRONG> (Thumb, 90 bytes, Stack size 8 bytes, enkodercontroll.o(i.SetUpInterrupt))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = SetUpInterrupt &rArr; NVIC_SetPriority
 </UL>
 <BR>[Calls]<UL><LI><a href="#[52]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NVIC_SetPriority
@@ -501,7 +501,7 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f10x_md_vl.o(.text)
 </UL>
-<P><STRONG><a name="[2e]"></a>USART1_IRQHandler</STRONG> (Thumb, 76 bytes, Stack size 8 bytes, main.o(i.USART1_IRQHandler))
+<P><STRONG><a name="[2e]"></a>USART1_IRQHandler</STRONG> (Thumb, 112 bytes, Stack size 8 bytes, main.o(i.USART1_IRQHandler))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = USART1_IRQHandler &rArr; SendInt
 </UL>
 <BR>[Calls]<UL><LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SendInt

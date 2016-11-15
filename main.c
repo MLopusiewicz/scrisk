@@ -27,52 +27,55 @@ int main()
 	return 0;
 }
 
-void EXTI1_IRQHandler() //PA1 linia - A 
-{
-	//dodac linie ~A
-	if((GPIOA->IDR & GPIO_IDR_IDR2) == GPIO_IDR_IDR2)
-	{
-		++force.ticks;		
-	}
-	else {
-		--force.ticks;
-	}
-	
-	EXTI->PR &= ~EXTI_PR_PR0;
-}
-
-
-void EXTI2_IRQHandler() //PA2 linia - B
-{
-//	if(force.lineA)
-//	{
-//		--force.ticks;
-//		force.lineA = false;
-//		force.lineB = false;
-//	}
-//	else {
-//		force.lineB = true;
-//	}
-//	
-	EXTI->PR &= ~EXTI_PR_PR2;
-}
-
-void EXTI3_IRQHandler()
-{
-	GPIOC->BSRR |= GPIO_BSRR_BS9;
-	EXTI->PR &= ~EXTI_PR_PR3;
-}
-
 void EXTI4_IRQHandler()
 {
-	GPIOC->BSRR |= GPIO_BSRR_BR9;
+	if((GPIOA->IDR & E1_nA) == E1_nA){
+		EXTI->PR |= EXTI_PR_PR4;
+		force.misstakes ++;
+		return;
+	}
+	if((GPIOA->IDR & E1_B) == E1_B){
+		if((GPIOA->IDR & E1_nB) != E1_nB)
+				++force.ticks;		
+		else
+				force.misstakes ++;
+	}
+	else {
+		if((GPIOA->IDR & E1_nB) == E1_nB)
+			--force.ticks;
+		else
+			force.misstakes ++;
+	}
 	
-	EXTI->PR &= ~EXTI_PR_PR4;
+	EXTI->PR |= EXTI_PR_PR4;
+}
+void EXTI9_5_IRQHandler()
+{	
+	
+	if((GPIOA->IDR & E2_nA) == E2_nA){
+		EXTI->PR |= EXTI_PR_PR5;
+		translation.misstakes ++;
+		return;
+	}
+	if((GPIOA->IDR & E2_B) == E2_B){
+		if((GPIOA->IDR & E2_nB) != E2_nB)
+				++translation.ticks;		
+		else
+				translation.misstakes ++;
+	}
+	else {
+		if((GPIOA->IDR & E2_nB) == E2_nB)  
+			--translation.ticks;
+		else
+			translation.misstakes ++;
+	}
+	
+	
+	EXTI->PR |= EXTI_PR_PR5;
 }
 
-
-
-void USART1_IRQHandler (void) {
+void USART1_IRQHandler (void) 
+	{
 	if((USART1->SR & USART_SR_RXNE) == USART_SR_RXNE){
 		
 		switch(USART1->DR)
@@ -80,14 +83,19 @@ void USART1_IRQHandler (void) {
 			case validationRequest:
 						SendByte(deviceID); 
 						break;
-			case forceTickValueRequest:
-						SendInt(force.ticks, 2);
-						force.ticks = 0;
-						break;
 			case resetEncoders:
 						force.ticks = 0;
-						translation.firstTick = 0;
 						break;
+			case ticksRequest:
+							SendInt(force.ticks, 2);
+							SendInt(translation.ticks, 2);
+							force.ticks = 0;
+							translation.ticks = 0;
+							break;
+			case misstakeRequest:
+							SendInt(force.misstakes,2);
+							SendInt(translation.misstakes,2);
+							break;
 		}
 	}
 }
