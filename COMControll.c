@@ -50,12 +50,11 @@ void SendByte(uint8_t a)
 	USART1->DR = a;		
 	while((USART1->SR & USART_SR_TC) != USART_SR_TC){}
 }
-void SendInt(int a)
+void SendInt(int a, int bytesAmount)
 {
-	for(int i=0; i<4;i++)
+	for(int i=0; i<bytesAmount;i++)
 	{
 		SendByte((uint8_t) a);
 		a=a>>8;
 	}
 }
-

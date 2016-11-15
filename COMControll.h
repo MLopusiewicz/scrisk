@@ -3,14 +3,15 @@
 
 #define validationRequest 125
 #define deviceID 160
-#define ForceTickValueRequest 167
+#define forceTickValueRequest 167
+#define resetEncoders 212
 
 #include <stm32f10x.h>
 
 
 void USARTInit(void);
-void Autenthicate(void);
+
 void SendByte(uint8_t a);
-void SendInt(int a);
+void SendInt(int a, int bytesAmount);
 
 #endif /* _COMControl_H */

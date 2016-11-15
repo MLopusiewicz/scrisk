@@ -41,6 +41,7 @@ void EXTI1_IRQHandler() //PA1 linia - A
 	EXTI->PR &= ~EXTI_PR_PR0;
 }
 
+
 void EXTI2_IRQHandler() //PA2 linia - B
 {
 //	if(force.lineA)
@@ -55,11 +56,13 @@ void EXTI2_IRQHandler() //PA2 linia - B
 //	
 	EXTI->PR &= ~EXTI_PR_PR2;
 }
+
 void EXTI3_IRQHandler()
 {
 	GPIOC->BSRR |= GPIO_BSRR_BS9;
 	EXTI->PR &= ~EXTI_PR_PR3;
 }
+
 void EXTI4_IRQHandler()
 {
 	GPIOC->BSRR |= GPIO_BSRR_BR9;
@@ -67,17 +70,23 @@ void EXTI4_IRQHandler()
 	EXTI->PR &= ~EXTI_PR_PR4;
 }
 
+
 void USART1_IRQHandler (void) {
 	if((USART1->SR & USART_SR_RXNE) == USART_SR_RXNE){
 		
-		if(USART1->DR == ForceTickValueRequest){
-			SendInt(force.ticks);
-			force.ticks = 0;
+		switch(USART1->DR)
+		{
+			case validationRequest:
+						SendByte(deviceID); 
+						break;
+			case forceTickValueRequest:
+						SendInt(force.ticks, 4);
+						force.ticks = 0;
+						break;
+			case resetEncoders:
+						force.ticks = 0;
+						translation.firstTick = 0;
+						break;
 		}
-		if(USART1->DR == validationRequest)
-			Autenthicate();
 	}
 }
-
-
-
